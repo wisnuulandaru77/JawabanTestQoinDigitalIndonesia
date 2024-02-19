@@ -22,7 +22,7 @@ public static class ApiConfiguration
     {
         builder.Services.AddDbContext<ApplicationDbContext>(options => {
 
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            var connectionString = builder.Configuration.GetConnectionString(GlobalVariable.DbConStringName);
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         });
     }
